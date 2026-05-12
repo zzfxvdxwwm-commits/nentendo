@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Use Nintendo</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body class="hx-body-page">
+
+    <!-- نفس النافبار -->
+    <div class="fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="nintendo.html">Nintendo</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="nintendo.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="nintendo.html#aboutMario">About Mario</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="tapes.html">Tapes</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="teame.html">Our Team</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="how-to-use.html">How To Use</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+
+
+
+
+
+    <!-- محتوى الصفحة -->
+    <div class="hx-main-wrapper">
+
+        <div class="hx-main-box text-center">
+            <h1 class="hx-main-title">How To Use Nintendo Tapes</h1>
+
+            <p class="hx-main-text">
+                This page explains how customers can browse Nintendo games,
+                choose products, and use the website in a simple and fun way.
+            </p>
+
+            <button id="hxInfoButton" class="btn btn-danger hx-red-btn">
+                Show More Info
+            </button>
+        </div>
+
+
+
+
+
+        <div id="hxHiddenInfo" class="hx-info-box">
+            <h2>About Nintendo Tapes</h2>
+
+            <p>
+                Nintendo Tapes is an online game store website designed for Nintendo fans.
+                Users can explore games, open product pages, and view game details
+                in a creative Nintendo-style design.
+            </p>
+        </div>
+
+
+
+
+
+        <div class="hx-card-box">
+            <h2 class="hx-section-title">Steps To Use The Website</h2>
+
+            <ol class="hx-steps-list">
+                <li>Open the Home page.</li>
+                <li>Browse Nintendo products inside the Tapes page.</li>
+                <li>Click on any game card.</li>
+                <li>Open the single product page.</li>
+                <li>Read the game description and price.</li>
+                <li>Login or create an account.</li>
+            </ol>
+        </div>
+
+
+
+
+
+        <div class="hx-card-box">
+            <h2 class="hx-section-title">Product Information Table</h2>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover text-center hx-table-style">
+                    <thead>
+                        <tr>
+                            <th>Game</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Version</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Tomodachi Life</td>
+                            <td>250 SAR</td>
+                            <td>Gaming</td>
+                            <td>Nintendo Switch</td>
+                        </tr>
+
+                        <tr>
+                            <td>Pokemon Pokopia</td>
+                            <td>300 SAR</td>
+                            <td>Gaming</td>
+                            <td>Nintendo Switch</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mario Kart World</td>
+                            <td>350 SAR</td>
+                            <td>Gaming</td>
+                            <td>Nintendo Switch</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="hx-card-box">
+            <h2 class="hx-section-title">Ask Us About Nintendo</h2>
+
+            <form id="hxQuestionForm">
+
+                <div class="mb-4">
+                    <label class="form-label">Your Name</label>
+                    <input type="text" id="hxUserName" class="form-control" placeholder="Enter your name">
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Your Question</label>
+                    <textarea id="hxUserQuestion" class="form-control" rows="5"
+                        placeholder="Write your question"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-dark hx-submit-btn">
+                    Submit
+                </button>
+
+            </form>
+
+            <p id="hxFormMessage"></p>
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- نفس الفوتر contact -->
+    <div class="container-fluid footer-section py-5" id="contact">
+
+        <div class="footer">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-4">
+                    <h3 class="text-red">Send Us a Message</h3>
+
+                    <form>
+                        <div class="mb-3">
+                            <label for="hxFooterEmail" class="form-label">Email Address</label>
+                            <input type="email" id="hxFooterEmail" class="form-control" placeholder="name@example.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="hxFooterMessage" class="form-label">Message</label>
+                            <textarea id="hxFooterMessage" class="form-control" rows="4"
+                                placeholder="Write your message"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark">Send</button>
+                    </form>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <h3 class="text-brown">Contact Information</h3>
+
+                    <p><i class="bi bi-geo-alt-fill"></i> Medina, Saudi Arabia</p>
+                    <hr>
+
+                    <p><i class="bi bi-telephone-fill"></i> +966 508316893</p>
+                    <hr>
+
+                    <p><i class="bi bi-envelope-fill"></i> Nintendo@gmail.com</p>
+                    <hr>
+
+                    <p>
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-twitter-x"></i>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="how-to-use.js"></script>
+
+</body>
+
+</html>

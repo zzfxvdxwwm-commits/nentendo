@@ -1,0 +1,1510 @@
+@import url("https://fonts.cdnfonts.com/css/ica-rubrik-black");
+@import url("https://fonts.cdnfonts.com/css/poppins");
+* {
+  margin: 0;
+  padding: 3px;
+  cursor: url("https://cur.cursors-4u.net/games/gam-14/gam1365.cur"), pointer;
+}
+body {
+  background-color: #fffde6 !important; /*       ضي سوته ليش حطينا الايمبورت*/
+}
+/* ===== Nintendo Carousel ===== */
+
+.nintendo-carousel-wrapper {
+  position: relative;
+  margin-top: 100px;
+  padding-bottom: 60px;
+}
+
+.nintendo-carousel {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #e60012 0%, #003478 50%, #e60012 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(230, 0, 18, 0.3),
+    0 0 40px rgba(0, 52, 120, 0.2);
+
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.carousel-inner {
+  height: 100%;
+  position: relative;
+}
+
+.carousel-item {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-item.active img {
+  animation: nintendoZoom 8s ease-out forwards;
+}
+
+/* Zoom Animation */
+
+@keyframes nintendoZoom {
+  0% {
+    transform: scale(1);
+    filter: brightness(0.9);
+  }
+
+  50% {
+    filter: brightness(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+    filter: brightness(1);
+  }
+}
+
+/* Overlay */
+
+.nintendo-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* Content */
+
+.nintendo-content-overlay {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 10;
+}
+
+.nintendo-label {
+  display: inline-block;
+
+  background: linear-gradient(135deg, #e60012, #ffd700);
+
+  color: white;
+
+  padding: 8px 20px;
+
+  border-radius: 50px;
+
+  font-weight: bold;
+  font-size: 14px;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  border: 2px solid white;
+
+  box-shadow: 0 4px 15px rgba(230, 0, 18, 0.4);
+
+  animation: nintendoPulse 2s ease-in-out infinite;
+}
+
+/* Pulse */
+
+@keyframes nintendoPulse {
+  0%,
+  100% {
+    transform: scale(1);
+
+    box-shadow: 0 4px 15px rgba(230, 0, 18, 0.4);
+  }
+
+  50% {
+    transform: scale(1.05);
+
+    box-shadow: 0 8px 25px rgba(230, 0, 18, 0.6);
+  }
+}
+
+/* Buttons */
+
+.nintendo-nav-btn {
+  position: absolute;
+
+  margin-top: 350px;
+  transform: translateY(-50%);
+
+  width: 55px;
+  height: 55px;
+
+  background: rgba(102, 93, 93, 0.9) !important;
+
+  border-radius: 50%;
+
+  z-index: 20;
+
+  transition: all 0.3s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 20px rgba(230, 0, 18, 0.5);
+}
+
+.nintendo-nav-btn:hover {
+  background: rgba(230, 0, 18, 1) !important;
+
+  transform: translateY(-50%) scale(1.15);
+
+  box-shadow: 0 12px 35px rgba(230, 0, 18, 0.8);
+}
+
+.nintendo-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.nintendo-nav-btn.carousel-control-prev {
+  left: 20px;
+}
+
+.nintendo-nav-btn.carousel-control-next {
+  right: 20px;
+}
+
+.nintendo-nav-icon {
+  color: white;
+
+  font-size: 32px;
+  font-weight: bold;
+
+  line-height: 1;
+}
+
+/* Indicators */
+
+.nintendo-indicators {
+  position: absolute;
+
+  bottom: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 12px;
+
+  z-index: 20;
+}
+
+.nintendo-indicator {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  border: 2px solid white;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  padding: 0;
+}
+
+.nintendo-indicator.active {
+  background: white;
+
+  width: 30px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 0 15px rgba(230, 0, 18, 0.8);
+}
+
+.nintendo-indicator:hover {
+  background: rgba(255, 215, 0, 0.8);
+
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* Hint */
+
+.nintendo-controller-hint {
+  text-align: center;
+
+  margin-top: 20px;
+
+  color: #003478;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.controller-text {
+  display: inline-block;
+
+  padding: 8px 16px;
+
+  border: 2px solid #003478;
+
+  border-radius: 20px;
+
+  background: rgba(230, 0, 18, 0.05);
+}
+
+/* Fade */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .nintendo-carousel {
+    border-radius: 12px;
+  }
+
+  .nintendo-nav-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .nintendo-nav-icon {
+    font-size: 24px;
+  }
+
+  .nintendo-label {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  .nintendo-nav-btn.carousel-control-prev {
+    left: 10px;
+  }
+
+  .nintendo-nav-btn.carousel-control-next {
+    right: 10px;
+  }
+}
+
+.carousel-inner {
+  height: 800px;
+}
+
+.carousel-item img {
+  height: 800px;
+  object-fit: cover;
+}
+
+.navbar {
+  backdrop-filter: blur(30px);
+  box-shadow: 0px 0px 30px rgb(105, 8, 8);
+  background-color: rgb(230, 7, 7);
+  border: 1.5px solid rgb(76, 20, 18);
+  padding: 30px;
+  margin: auto;
+  color: brown;
+}
+
+.container-fluid {
+  /*       كبرت الخطوط اللي عند الناف فوق ضي*/
+  font-size: 20px;
+}
+
+.c1 {
+  padding: 15px;
+  margin: 0px;
+  box-shadow: inset;
+  border-style: outset;
+  border-radius: 10px;
+  background: url("img/ff.jpg");
+}
+.c1 h1 {
+  padding: 10px;
+  margin: auto;
+  color: brown;
+  text-align: center;
+  font-family: "ICA rubrik";
+}
+.c1 p {
+  font-weight: bold;
+  color: rgb(4, 4, 85);
+  text-align: center;
+}
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.banner .slider {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 30%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: outoRun 20s linear infinite;
+}
+@keyframes outoRun {
+  form {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+    translateZ(350px);
+}
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content {
+  font-family: "ICA rubrik";
+  font-size: 1px;
+  line-height: 140px;
+  width: 100%; /*          ماعرفت اخلي الصورة فوق وتكون فوق الكلام */
+  color: blue;
+  text-align: center;
+}
+form input,
+form textarea {
+  width: 30%;
+  padding: 8px;
+  box-shadow: inset;
+}
+
+.footer-section {
+  background-color: #d41313;
+}
+
+.bi {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.bi:hover {
+  color: rgb(23, 30, 84);
+} /*          كل شي فوق ضي سوته */
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px; /* مسافة بين الأزرار والكارد */
+}
+
+.card {
+  padding: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.player {
+  width: 150px;
+  margin: 20px auto;
+}
+
+.name {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*    رزان سوته   هنا حق الlogin   /*/
+
+.navbar {
+  backdrop-filter: blur(30px);
+  box-shadow: 0px 0px 30px rgb(105, 8, 8);
+  background-color: rgb(230, 7, 7);
+  border: 1.5px solid rgb(167, 10, 5);
+  padding: 30px;
+}
+.container-fluid {
+  /*       كبرت الخطوط اللي عند الناف فوق ضي*/
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: url("img/1.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.form-box {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+}
+
+.inputbox {
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -5px;
+}
+.inputbox input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding: 0 35px 0 5px;
+  color: #fff;
+}
+
+.inputbox ion-icon {
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.2em;
+  top: 20px;
+}
+
+.forget {
+  margin: -15px 0 15px;
+  font-size: 0.9em;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+.forget label input {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.rem label input {
+  margin-left: -10px;
+  margin-right: 0px;
+  margin-bottom: 25px;
+}
+
+.forget label a {
+  color: #8a0303;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.forget label a:hover {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 20px;
+}
+
+button:hover {
+  background-color: #ffe9e3;
+  color: rgb(208, 103, 103);
+}
+button {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 2px solid #c8dcde;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  border-radius: 8px;
+  transition:
+    background-color 0.9s ease,
+    color 0.4s ease;
+}
+
+.register {
+  font-size: 0.9em;
+  color: #fff;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.register p a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.register p a:hover {
+  text-decoration: underline;
+}
+
+/*   */
+/* إبعاد الصفحة عن النافبار */
+.tapes-page {
+  padding-top: 800px;
+}
+
+/* ===== Intro ===== */
+.tapes-intro {
+  text-align: center;
+  margin-bottom: 55px;
+  animation: introUp 1s ease forwards;
+}
+
+.intro-badge {
+  display: inline-block;
+  background: #d62d20;
+  color: white;
+  padding: 8px 22px;
+  border-radius: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.tapes-intro h1 {
+  font-size: 55px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.tapes-intro p {
+  font-size: 20px;
+  color: #555;
+}
+
+/* ===== الكروت ===== */
+.tape-card {
+  height: 430px;
+  border: 6px solid black;
+  box-shadow: 8px 8px 0 black;
+  overflow: hidden;
+  position: relative;
+  background-color: #d62d20;
+  transition: transform 0.3s ease;
+}
+
+/* حركة احترافية */
+.tape-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.tape-img-box {
+  width: 100%;
+  height: 60%;
+}
+
+.tape-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tape-info {
+  height: 45%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  text-align: center;
+}
+
+.tape-label {
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 6px 22px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.tape-info h3 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* شكل الشريط */
+.tape-icon {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95px;
+  height: 60px;
+  background: white;
+  border: 8px solid #d62d20;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.reel {
+  width: 22px;
+  height: 22px;
+  background: #333;
+  border-radius: 50%;
+}
+
+/* Animation */
+@keyframes introUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*team page*/
+
+/* Reset */
+
+/* الكونتينر */
+.zx9-wrap-root {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+/* الكارد */
+.zx9-card-core {
+  margin: 200px;
+  background: white;
+  border: 3px solid black;
+  padding: 30px 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 5px 5px 0 black;
+}
+
+/* العنوان */
+.zx9-title-main {
+  font-size: 32px;
+  font-weight: bold;
+  color: #f9ee87;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+
+  background: #0f018a;
+  display: inline-block;
+  padding: 6px 14px;
+
+  box-shadow: 2px 2px 0 black;
+}
+
+/* الصورة */
+.zx9-avatar-img {
+  width: 250px;
+  height: 400px;
+  object-fit: contain;
+  margin-top: 5px;
+}
+
+/* الأزرار */
+button {
+  padding: 10px 16px;
+  font-size: 22px;
+  border: #fffde6;
+  background: #fffde6;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* تأثير */
+button:hover {
+  background: rgb(255, 9, 9);
+  color: white;
+}
+
+/*تنسيقات السنقل*/
+
+.tml-body-theme {
+  margin: 0;
+  background-color: #fffde6;
+  font-family: "Fredoka", sans-serif;
+  min-height: 100vh;
+  padding: 50px 0;
+  margin-top: 100px;
+}
+
+.tml-main-wrapper {
+  width: 92%;
+  margin: auto;
+  background: white;
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.tml-main-wrapper::before {
+  content: "★";
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  font-size: 100px;
+  color: rgba(255, 214, 0, 0.3);
+  animation: tmlSpin 7s linear infinite;
+}
+
+.tml-main-wrapper::after {
+  content: "GAME WORLD";
+  position: absolute;
+  bottom: 15px;
+  right: -20px;
+  font-size: 70px;
+  font-weight: 700;
+  color: rgba(255, 60, 40, 0.07);
+  transform: rotate(-8deg);
+}
+
+.tml-path-dot {
+  margin: 0 10px;
+  color: #aaa;
+}
+
+.tml-current-page {
+  color: #222;
+}
+
+.tml-flex-layout {
+  display: flex;
+  gap: 60px;
+}
+
+.tml-gallery-side {
+  width: 58%;
+  margin-top: 100px;
+}
+
+.tml-hero-image {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 12px 12px 0 #ff4735;
+  transition: 0.4s;
+}
+
+.tml-hero-image:hover {
+  transform: rotate(-1deg) scale(1.015);
+}
+
+.tml-mini-gallery {
+  display: flex;
+  gap: 16px;
+  margin-top: -100px;
+
+  overflow-x: auto;
+}
+
+.tml-mini-gallery img {
+  width: 130px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 4px solid transparent;
+  margin-top: 10px;
+}
+
+.tml-mini-gallery img:hover {
+  transform: translateY(-5px) rotate(-2deg);
+  border-color: #ff3d2d;
+}
+
+.tml-rating-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.tml-rating-letter {
+  width: 60px;
+  height: 75px;
+  border: 4px solid black;
+  font-size: 50px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tml-rating-box p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.tml-product-side {
+  width: 42%;
+  padding-top: 10px;
+}
+
+.tml-game-title {
+  font-size: 55px;
+  font-weight: 700;
+  color: #333;
+  text-shadow: 4px 4px 0 #fff06b;
+  margin-bottom: 32px;
+}
+
+.tml-version-line {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.tml-version-line h5 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.tml-version-badge {
+  background: #f5f5f5;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+.tml-edition-text {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.tml-edition-card {
+  border-radius: 24px;
+  padding: 18px;
+  display: grid;
+  gap: 15px;
+
+  background:
+    radial-gradient(circle at top left, #fff6b3, transparent 35%),
+    radial-gradient(circle at bottom right, #ffd5ef, transparent 35%), white;
+
+  border: 2px solid #ececec;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.tml-edition-card label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 18px;
+  background: white;
+  border: 2px dashed #d8d8d8;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.tml-edition-card label:hover {
+  transform: scale(1.02) rotate(-1deg);
+  border-color: #ff4936;
+  box-shadow: 0 10px 25px rgba(255, 73, 54, 0.18);
+}
+
+.tml-edition-card input {
+  width: 23px;
+  height: 23px;
+  accent-color: #e63125;
+}
+
+.tml-edition-card b {
+  display: block;
+  font-size: 26px;
+  color: #222;
+}
+
+.tml-edition-card small {
+  font-size: 15px;
+  color: #666;
+}
+
+.tml-price-row {
+  margin-top: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tml-price-row h2 {
+  font-size: 55px;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+.tml-price-row span {
+  font-size: 52px;
+  color: #e63125;
+}
+
+.tml-download-btn {
+  width: 100%;
+  height: fit-content;
+  margin-top: 28px;
+  border: none;
+  border-radius: 18px;
+  padding: 24px;
+
+  background: linear-gradient(135deg, #ff4d3d, #cf1d13);
+
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+
+  box-shadow: 0 15px 35px rgba(255, 70, 50, 0.3);
+
+  transition: 0.4s;
+
+  animation: tmlBounce 2s infinite;
+}
+
+.tml-download-btn:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+.tml-auto-note {
+  margin-top: 24px;
+  color: #666;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.tml-description-wrapper {
+  width: 92%;
+  margin: 35px auto;
+  background: white;
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.tml-description-wrapper h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.tml-description-wrapper p {
+  font-size: 20px;
+  line-height: 2;
+  color: #555;
+  text-align: center;
+}
+
+@keyframes tmlSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tmlBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 950px) {
+  .tml-flex-layout {
+    flex-direction: column;
+  }
+
+  .tml-gallery-side,
+  .tml-product-side {
+    width: 100%;
+  }
+
+  .tml-hero-image {
+    height: 340px;
+  }
+
+  .tml-main-wrapper {
+    padding: 25px;
+  }
+
+  .tml-game-title {
+    font-size: 42px;
+  }
+}
+
+
+
+
+
+
+/* ===== HOW TO USE PAGE ===== */
+
+.hx-body-page{
+    background-color: #fffde6;
+}
+
+/* wrapper */
+
+.hx-main-wrapper{
+    padding-top: 170px;
+    padding-bottom: 80px;
+    max-width: 950px;
+}
+
+/* top box */
+
+.hx-main-box{
+
+    background-color: white;
+
+    border: 4px solid #d52b1e;
+
+    border-radius: 30px;
+
+    padding: 45px;
+
+    margin-bottom: 45px;
+
+    box-shadow: 10px 10px 0 black;
+}
+
+.hx-main-title{
+
+    color: #d52b1e;
+
+    font-size: 55px;
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+.hx-main-text{
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    color: #333;
+}
+
+/* button */
+
+.hx-red-btn{
+
+    padding: 12px 35px;
+
+    font-size: 20px;
+
+    border-radius: 15px;
+}
+
+/* hidden info */
+
+.hx-info-box{
+
+    background-color: #ffe9e3;
+
+    border: 3px dashed #d52b1e;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    margin-bottom: 45px;
+
+    text-align: center;
+}
+
+.hx-info-box h2{
+
+    color: #d52b1e;
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.hx-info-box p{
+
+    font-size: 20px;
+
+    line-height: 1.8;
+}
+
+/* cards */
+
+.hx-card-box{
+
+    background-color: white;
+
+    border: 4px solid black;
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    margin-bottom: 45px;
+
+    box-shadow: 10px 10px 0 black;
+}
+
+/* titles */
+
+.hx-section-title{
+
+    color: #d52b1e;
+
+    text-align: center;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    margin-bottom: 30px;
+}
+
+/* list */
+
+.hx-steps-list{
+
+    padding-left: 30px;
+}
+
+.hx-steps-list li{
+
+    font-size: 22px;
+
+    margin-bottom: 18px;
+
+    line-height: 1.8;
+}
+
+/* table */
+
+.hx-table-style{
+
+    font-size: 20px;
+}
+
+.hx-table-style thead{
+
+    background-color: #f4cccc;
+}
+
+/* form */
+
+.hx-submit-btn{
+
+    padding: 12px 35px;
+
+    border-radius: 15px;
+
+    font-size: 20px;
+}
+
+#hxFormMessage{
+
+    margin-top: 20px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+    .hx-main-wrapper{
+
+        padding-top: 140px;
+
+        width: 95%;
+    }
+
+    .hx-main-title{
+
+        font-size: 36px;
+    }
+
+    .hx-section-title{
+
+        font-size: 30px;
+    }
+
+    .hx-main-text,
+    .hx-info-box p,
+    .hx-steps-list li{
+
+        font-size: 18px;
+    }
+
+    .hx-card-box,
+    .hx-main-box{
+
+        padding: 25px;
+    }
+
+}
+
+
+
+
+
+
+
+/* ===== HOW TO USE PAGE ===== */
+
+.hx-body-page {
+    background-color: #fffde6;
+}
+
+.hx-main-wrapper {
+    padding-top: 170px;
+    padding-bottom: 80px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.hx-main-box {
+    background-color: white;
+    border: 4px solid #d52b1e;
+    border-radius: 30px;
+    padding: 45px;
+    margin-bottom: 45px;
+    box-shadow: 10px 10px 0 black;
+}
+
+.hx-main-title {
+    color: #d52b1e;
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.hx-main-text {
+    font-size: 22px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.hx-red-btn {
+    padding: 12px 35px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.hx-info-box {
+    background-color: #ffe9e3;
+    border: 3px dashed #d52b1e;
+    border-radius: 25px;
+    padding: 35px;
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.hx-info-box h2 {
+    color: #d52b1e;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hx-info-box p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.hx-card-box {
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 45px;
+    box-shadow: 10px 10px 0 black;
+}
+
+.hx-section-title {
+    color: #d52b1e;
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.hx-steps-list {
+    padding-left: 30px;
+}
+
+.hx-steps-list li {
+    font-size: 22px;
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+
+.hx-table-style {
+    font-size: 20px;
+}
+
+.hx-table-style thead {
+    background-color: #f4cccc;
+}
+
+.hx-submit-btn {
+    padding: 12px 35px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+#hxFormMessage {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* يخلي أزرار صفحة how-to-use ما تتأثر بزرار صفحات ثانية */
+.hx-main-wrapper button {
+    width: auto;
+    margin: 10px auto;
+}
+
+/* responsive */
+
+@media(max-width:768px) {
+
+    .hx-main-wrapper {
+        padding-top: 140px;
+        width: 95%;
+    }
+
+    .hx-main-title {
+        font-size: 36px;
+    }
+
+    .hx-section-title {
+        font-size: 30px;
+    }
+
+    .hx-main-text,
+    .hx-info-box p,
+    .hx-steps-list li {
+        font-size: 18px;
+    }
+
+    .hx-card-box,
+    .hx-main-box {
+        padding: 25px;
+    }
+}
+
+
+

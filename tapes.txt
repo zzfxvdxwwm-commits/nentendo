@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Tomodachi Life™: Living the Dream",
+    "price": 350,
+    "image": "img/tomodachi.jpg",
+    "category": "gamming",
+    "link": "tape1.html"
+  },
+
+  {
+    "name": "Pokémon™ Pokopia",
+    "price": 350,
+    "image": "img/pokopia.jpg",
+    "category": "gamming",
+    "link": "tape2.html"
+  },
+
+  {
+    "name": "Mario Kart™ World",
+    "price": 350,
+    "image": "img/mario-main.jpg",
+    "category": "gamming",
+    "link": "tape3.html"
+  },
+
+  {
+    "name": "Donkey Kong™ Bananza",
+    "price": 220,
+    "image": "img/taps4.jpg",
+    "category": "gamming",
+    "link": "donkey.html"
+  },
+
+  {
+    "name": "Super Mario Party™",
+    "price": 355,
+    "image": "img/taps5.jpg",
+    "category": "gamming",
+    "link": "party.html"
+  },
+
+  {
+    "name": "Mario Tennis™ Fever",
+    "price": 280,
+    "image": "img/taps6.jpg",
+    "category": "gamming",
+    "link": "tennis.html"
+  }
+]
